@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "92d67b86-f8b8-4057-b8e3-7a873aec7f1d",
+		"name": "taller-mecanico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "usuario",
+			"item": [
+				{
+					"name": "usuario",
+					"item": [
+						{
+							"name": "01_login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\":\"macc\",\r\n    \"passw\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_local}}usuario/login",
+									"host": [
+										"{{url_local}}usuario"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "02_getUsuario",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"texto\":\"hola como estas\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_nube}}usuario/get_user?indice=1&cant=10&nombre=-1",
+									"host": [
+										"{{url_nube}}usuario"
+									],
+									"path": [
+										"get_user"
+									],
+									"query": [
+										{
+											"key": "indice",
+											"value": "1"
+										},
+										{
+											"key": "cant",
+											"value": "10"
+										},
+										{
+											"key": "nombre",
+											"value": "-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "03_insertUsuario",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_username\":\"prueba2\",\r\n    \"_email\":\"prueba2@gmail.com\",\r\n    \"_password\":\"123\",\r\n    \"_urlfoto\":\"https://img2.freepng.es/20180501/aiq/kisspng-computer-icons-mobile-phones-contact-free-clip-a-5ae89e0e46df20.5997647115251942542903.jpg\",\r\n    \"_estado\":true,\r\n    \"_nombre\":\"prueba2 nombre\",\r\n    \"_apellido\":\"prueba2 apellido\",\r\n    \"_telefono\":\"78541252\",\r\n    \"_ci\":\"963635\",\r\n    \"_dirrecion\":\"scz/warnes\",\r\n    \"_sexo\":\"m\",\r\n    \"_tipo_pers\":\"p\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_nube}}usuario/insert",
+									"host": [
+										"{{url_nube}}usuario"
+									],
+									"path": [
+										"insert"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "04_updateUsuario",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"estado\":\"a\",\r\n    \"foto\":\"https://mecaluxes.cdnwm.com/blog/img/limpieza-fundamental-organizacion-almacen.1.4.jpg\",\r\n    \"descrip\":\"almacen de jarabes\",\r\n    \"capac\":2250,\r\n    \"nombre\":\"zona 10\",\r\n    \"dato\":[\r\n        {\"telefono\":[\"75123645\",\"62546321\"]},\r\n        {\"dirrecion\":[\"av. santo dumont\"]}        \r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_Nube}}almacen/update/4",
+									"host": [
+										"{{url_Nube}}almacen"
+									],
+									"path": [
+										"update",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "05_deleteUsuario",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_nube}}usuario/delete?_id=8",
+									"host": [
+										"{{url_nube}}usuario"
+									],
+									"path": [
+										"delete"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
